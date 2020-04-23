@@ -35,13 +35,12 @@ export class QuestionnaireComponent implements OnInit {
   get waysInWhich() { return this.questionnaireForm.get('waysInWhichILikeProgramming'); }
 
   onSubmit() {
-    console.log(this.questionnaireForm);
+    // console.log(this.questionnaireForm);
     this.questService.logClickEvent();
   }
 
   numericChanged(event) {
-    console.log(event);
-    console.log('hit');
+    // console.log(event); the event allows you to see what the user typed
     this.questService.logNumericValueChange();
   }
 
