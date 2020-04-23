@@ -1,0 +1,29 @@
+.inject {
+    height: 100%;
+}
+@media (min-width: 792px) {
+
+    ul li {
+        margin:10px;
+    }
+}
+
+.collapse:not(.show) {
+    display: flex !important;
+}
+
+.active {
+    color: #3399ff!important;
+}
+
+.greeting {
+  letter-spacing: 3px;
+  p {
+      text-align: center;
+    font-weight: 200;
+  }
+}
+
+.user {
+    color: #3399ff;
+}

@@ -1,0 +1,27 @@
+
+
+<div class="card">
+    <h4>{{user.name}} answer these questions</h4>
+    <div class="card-body">
+        <!-- Start Reactive Form -->
+        <form [formGroup]="questionnaireForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="howMuchILikeProgramming">How much I like programming</label>
+                <input (keyup)="numericChanged($event)" type="number" formControlName="howMuchILikeProgramming" class="form-control"/>
+                <!-- NOTE: (keyup) immediately lets us know that a change has occurred
+                    on the other hand if i used (change) it will only call the service 
+                    whenever i click out of input
+                 -->
+            </div>
+            <div class="form-group">
+                <label for="waysInWhichILikeProgramming">Ways in which I like programming</label>
+                <input type="text" formControlName="waysInWhichILikeProgramming" class="form-control" required/>
+                <div *ngIf="waysInWhich.invalid && (waysInWhich.dirty || waysInWhich.touched)" class="alert alert-danger">
+                    ways in which you like programming is required.
+                </div>
+            </div>
+            <button class="btn btn-outline-info" type="submit" [disabled]="!questionnaireForm.valid">Submit</button>
+        </form>
+        <!-- End Reactive Form -->
+    </div>
+</div>

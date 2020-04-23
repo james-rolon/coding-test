@@ -1,0 +1,18 @@
+<div class="container">
+    <div id="welcome">
+        <!-- Start template driven form -->
+        <form (ngSubmit)="onSubmit()" #welcomeForm="ngForm">
+            <div class="form-group">
+                <h2 for="FirstName">Welcome&nbsp;</h2>
+                <input type="text" id="name" required [(ngModel)]="user.name" 
+                       name="name" #name="ngModel" placeholder="enter your first name">
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                  your name is required.
+                </div>
+              </div>
+              <button [disabled]="!welcomeForm.form.valid" type="submit" 
+              class="btn btn-outline-info">come on in</button>
+        </form>
+        <!-- End template driven form -->
+    </div>
+</div>
